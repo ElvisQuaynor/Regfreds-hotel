@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regfred's Hotel — Kasoa, Ghana</title>
+  <meta name="description" content="Regfred's Hotel, Kasoa — A refined sanctuary in the heart of Central Region, Ghana. Book directly and pay with Mobile Money or card.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===================== NAVIGATION ===================== -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">Regfred<span>'s</span></a>
+  <ul class="nav-links">
+    <li><a href="#rooms">Rooms</a></li>
+    <li><a href="#amenities">Amenities</a></li>
+    <li><a href="#dining">Dining</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#" class="nav-book" onclick="openBooking(); return false;">Book Now</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Open Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+
+<!-- ===================== HERO ===================== -->
+<!--
+  HOW TO ADD A HERO BACKGROUND IMAGE:
+  1. Put your image in images/hero/ (e.g. images/hero/hotel-front.jpg)
+  2. In css/style.css, find the .hero rule
+  3. Add: background-image: url('../images/hero/hotel-front.jpg');
+  4. Change background to: background-color: rgba(0,0,0,0.45); (for the dark overlay)
+  5. Add: background-blend-mode: multiply;
+-->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Kasoa, Central Region · Ghana</p>
+    <h1 class="hero-title">Where <em>Comfort</em><br>Meets Culture</h1>
+    <p class="hero-sub">A refined sanctuary in the heart of Kasoa. Regfred's Hotel offers world-class hospitality with the warmth of Ghanaian tradition.</p>
+    <div class="hero-actions">
+      <a href="#" class="btn-primary" onclick="openBooking(); return false;">Reserve Your Stay</a>
+      <a href="#rooms" class="btn-outline">Explore Rooms</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+
+<!-- ===================== QUICK BOOK BAR ===================== -->
+<div class="quick-book">
+  <div class="qb-field">
+    <span class="qb-label">Check In</span>
+    <input type="date" id="qb-checkin">
+  </div>
+  <div class="qb-field">
+    <span class="qb-label">Check Out</span>
+    <input type="date" id="qb-checkout">
+  </div>
+  <div class="qb-field">
+    <span class="qb-label">Room Type</span>
+    <select>
+      <option>Standard Room</option>
+      <option>Deluxe Room</option>
+      <option>Executive Suite</option>
+      <option>Presidential Suite</option>
+    </select>
+  </div>
+  <div class="qb-field">
+    <span class="qb-label">Guests</span>
+    <select>
+      <option>1 Guest</option>
+      <option>2 Guests</option>
+      <option>3 Guests</option>
+      <option>4 Guests</option>
+    </select>
+  </div>
+  <button class="qb-submit" onclick="openBooking()">Check Availability</button>
+</div>
+
+
+<!-- ===================== ABOUT ===================== -->
+<section class="about" id="about">
+  <div class="about-inner">
+
+    <!-- 
+      HOW TO ADD A PHOTO HERE:
+      Replace the .about-card div below with:
+      <img src="../images/about/hotel-lobby.jpg" alt="Regfred's Hotel Lobby" class="about-photo">
+      Then add .about-photo { width:100%; height:500px; object-fit:cover; } in style.css
+    -->
+    <div class="about-visual">
+      <div class="about-card">
+        <div class="about-card-pattern"></div>
+        <div>
+          <div class="about-card-badge">2019</div>
+          <div class="about-card-label">Established in Kasoa</div>
+        </div>
+      </div>
+      <div class="about-accent"></div>
+    </div>
+
+    <div class="about-text">
+      <p class="section-eyebrow">Our Story</p>
+      <h2 class="section-title">A Hotel <em>Born</em><br>From Kasoa's Spirit</h2>
+      <div class="gold-rule"></div>
+      <p class="section-body">Regfred's Hotel was founded with one vision: to bring genuine Ghanaian hospitality to Kasoa's growing community. Nestled in Central Region, we blend modern comfort with the vibrant energy of this thriving city — a place where every guest feels truly at home.</p>
+      <div class="about-stats">
+        <div class="stat-item">
+          <div class="stat-num">48</div>
+          <div class="stat-label">Rooms & Suites</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">5+</div>
+          <div class="stat-label">Years Serving Guests</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Dining Experiences</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">98%</div>
+          <div class="stat-label">Guest Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== ROOMS ===================== -->
+<section class="rooms" id="rooms">
+  <div class="rooms-inner">
+    <div class="rooms-header">
+      <div>
+        <p class="section-eyebrow">Accommodation</p>
+        <h2 class="section-title">Rooms & <em>Suites</em></h2>
+      </div>
+      <a href="#" class="btn-primary" onclick="openBooking(); return false;">Book a Room</a>
+    </div>
+
+    <div class="rooms-grid">
+
+      <!-- ROOM 1: Standard -->
+      <!--
+        HOW TO ADD ROOM PHOTO:
+        Inside .room-visual, add: <img src="../images/rooms/standard-room.jpg" alt="Standard Room" class="room-photo">
+        Then in style.css add: .room-photo { width:100%; height:100%; object-fit:cover; position:absolute; inset:0; }
+      -->
+      <div class="room-card">
+        <div class="room-visual room-pattern-1">
+          <div class="room-badge">Most Popular</div>
+          <div class="room-number">01</div>
+        </div>
+        <div class="room-info">
+          <div class="room-type">Classic</div>
+          <div class="room-name">Standard Room</div>
+          <p class="room-desc">A well-appointed room with king-size bed, en-suite bathroom, air conditioning, and garden views — perfect for the solo traveller or business guest.</p>
+          <div class="room-footer">
+            <div>
+              <span class="room-price">GH₵ 450</span>
+              <span class="room-price-label">/ night</span>
+            </div>
+            <a href="#" class="room-link" onclick="openBooking(); return false;">Reserve →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROOM 2: Deluxe -->
+      <div class="room-card">
+        <div class="room-visual room-pattern-2">
+          <div class="room-number">02</div>
+        </div>
+        <div class="room-info">
+          <div class="room-type">Premium</div>
+          <div class="room-name">Deluxe Room</div>
+          <p class="room-desc">Spacious and elegantly furnished with a private balcony, premium bedding, satellite TV, and complimentary breakfast for two.</p>
+          <div class="room-footer">
+            <div>
+              <span class="room-price">GH₵ 650</span>
+              <span class="room-price-label">/ night</span>
+            </div>
+            <a href="#" class="room-link" onclick="openBooking(); return false;">Reserve →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ROOM 3: Executive Suite -->
+      <div class="room-card">
+        <div class="room-visual room-pattern-3">
+          <div class="room-badge">Signature</div>
+          <div class="room-number">03</div>
+        </div>
+        <div class="room-info">
+          <div class="room-type">Luxury</div>
+          <div class="room-name">Executive Suite</div>
+          <p class="room-desc">Full living area, king bedroom, whirlpool bath, private bar, and panoramic views over Kasoa. The ultimate indulgence.</p>
+          <div class="room-footer">
+            <div>
+              <span class="room-price">GH₵ 1,200</span>
+              <span class="room-price-label">/ night</span>
+            </div>
+            <a href="#" class="room-link" onclick="openBooking(); return false;">Reserve →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== AMENITIES ===================== -->
+<section class="amenities" id="amenities">
+  <div class="amenities-inner">
+    <div class="amenities-header">
+      <p class="section-eyebrow">Hotel Facilities</p>
+      <h2 class="section-title">Everything You <em>Need</em></h2>
+      <div class="gold-rule"></div>
+      <p class="section-body">From business to leisure, Regfred's is equipped to make every moment of your stay exceptional.</p>
+    </div>
+    <div class="amenities-grid">
+      <div class="amenity-item">
+        <div class="amenity-icon">🏊</div>
+        <div class="amenity-name">Swimming Pool</div>
+        <p class="amenity-desc">Outdoor pool open 6am–10pm, with poolside bar service.</p>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon">🍽️</div>
+        <div class="amenity-name">Restaurant & Bar</div>
+        <p class="amenity-desc">Continental and Ghanaian cuisine served daily, plus a full cocktail bar.</p>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon">💼</div>
+        <div class="amenity-name">Conference Hall</div>
+        <p class="amenity-desc">Fully equipped hall for corporate events, meetings, and seminars.</p>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon">🛡️</div>
+        <div class="amenity-name">24-Hour Security</div>
+        <p class="amenity-desc">Round-the-clock security with CCTV and gated premises.</p>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon">📶</div>
+        <div class="amenity-name">Free High-Speed WiFi</div>
+        <p class="amenity-desc">Fast, reliable internet throughout all rooms and common areas.</p>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon">🚗</div>
+        <div class="amenity-name">Free Parking</div>
+        <p class="amenity-desc">Spacious on-site parking for all hotel guests.</p>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon">💆</div>
+        <div class="amenity-name">Spa & Wellness</div>
+        <p class="amenity-desc">Massage, beauty treatments, and wellness services on request.</p>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon">✈️</div>
+        <div class="amenity-name">Airport Transfers</div>
+        <p class="amenity-desc">Arranged pick-up and drop-off service to Kotoka International Airport.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== GALLERY ===================== -->
+<!--
+  HOW TO ADD GALLERY PHOTOS:
+  Replace each .gallery-item-inner div with an <img> tag:
+  <img src="../images/gallery/lobby.jpg" alt="The Lobby" class="gallery-photo">
+  Then in style.css add: .gallery-photo { width:100%; height:100%; object-fit:cover; }
+-->
+<section class="gallery" id="gallery">
+  <div class="gallery-header">
+    <p class="section-eyebrow">Visual Tour</p>
+    <h2 class="section-title">A Glimpse of <em>Regfred's</em></h2>
+  </div>
+  <div class="gallery-strip">
+    <div class="gallery-item">
+      <div class="gallery-item-inner g1">
+        <!-- Replace with: <img src="images/gallery/lobby.jpg" alt="Hotel Lobby" class="gallery-photo"> -->
+      </div>
+      <div class="gallery-label">The Lobby</div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-item-inner g2">
+        <!-- Replace with: <img src="images/gallery/pool.jpg" alt="Swimming Pool" class="gallery-photo"> -->
+      </div>
+      <div class="gallery-label">Pool Area</div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-item-inner g3">
+        <!-- Replace with: <img src="images/gallery/suite.jpg" alt="Executive Suite" class="gallery-photo"> -->
+      </div>
+      <div class="gallery-label">Executive Suite</div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-item-inner g4">
+        <!-- Replace with: <img src="images/gallery/restaurant.jpg" alt="Restaurant" class="gallery-photo"> -->
+      </div>
+      <div class="gallery-label">Restaurant</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== DINING ===================== -->
+<section class="dining" id="dining">
+  <div class="dining-inner">
+    <!--
+      HOW TO ADD DINING PHOTO:
+      Replace the .dining-visual div content with:
+      <img src="images/dining/restaurant.jpg" alt="Restaurant" class="dining-photo">
+      Add to style.css: .dining-photo { width:100%; height:100%; object-fit:cover; position:absolute; inset:0; }
+    -->
+    <div class="dining-visual">
+      <div class="dining-pattern"></div>
+      <div class="dining-quote">"Every meal is a celebration of Ghanaian flavour."</div>
+    </div>
+    <div>
+      <p class="section-eyebrow">Food & Drink</p>
+      <h2 class="section-title">Taste the <em>Best</em><br>of Two Worlds</h2>
+      <div class="gold-rule"></div>
+      <p class="section-body">Our kitchen blends the bold, comforting flavours of Ghanaian cuisine with international favourites — crafted fresh for every guest, every day.</p>
+      <div class="menu-preview">
+        <div class="menu-item">
+          <div class="menu-category">Ghanaian Favourite</div>
+          <div class="menu-dish">Jollof Rice & Grilled Tilapia</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-category">Continental</div>
+          <div class="menu-dish">Eggs Benedict & Fresh Salad</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-category">Drinks</div>
+          <div class="menu-dish">Sobolo, Cocktails & Fresh Juice</div>
+        </div>
+        <div class="menu-item">
+          <div class="menu-category">Evening Special</div>
+          <div class="menu-dish">Grilled Chicken & Kelewele</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="testimonials" id="reviews">
+  <div class="testimonials-inner">
+    <div class="testimonials-header">
+      <p class="section-eyebrow">Guest Reviews</p>
+      <h2 class="section-title">What Our Guests <em>Say</em></h2>
+      <div class="gold-rule"></div>
+      <p class="section-body">Hear from the people who matter most — our guests.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Exceptional service, immaculate rooms, and the Jollof Rice was absolutely incredible. Regfred's made our stay in Kasoa truly memorable."</p>
+        <div class="review-author">Ama Asante</div>
+        <div class="review-origin">Accra, Ghana</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Perfect for a business trip. Fast WiFi, comfortable beds, and the conference facilities were top-notch. Will absolutely be returning."</p>
+        <div class="review-author">David Mensah</div>
+        <div class="review-origin">Kumasi, Ghana</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★☆</div>
+        <p class="review-text">"Fantastic value for money. The pool was lovely, the staff genuinely friendly, and the location in Kasoa was very convenient."</p>
+        <div class="review-author">Sarah Osei</div>
+        <div class="review-origin">Takoradi, Ghana</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== BOOKING CTA ===================== -->
+<section class="booking-section" id="book">
+  <div class="booking-section-pattern"></div>
+  <p class="section-eyebrow">Reserve Now</p>
+  <h2 class="section-title">Begin Your <em>Stay</em></h2>
+  <div class="gold-rule"></div>
+  <p class="section-body">Book directly and enjoy our best rates. Pay securely with Mobile Money, card, or cash on arrival.</p>
+  <button class="btn-primary" onclick="openBooking()">Reserve a Room</button>
+</section>
+
+
+<!-- ===================== CONTACT & LOCATION ===================== -->
+<section class="location" id="contact">
+  <div class="location-inner">
+    <div>
+      <p class="section-eyebrow">Find Us</p>
+      <h2 class="section-title">Located in the <em>Heart</em><br>of Kasoa</h2>
+      <div class="gold-rule"></div>
+      <p class="section-body">Easy to reach from Accra and across Central Region. Airport transfers available on request.</p>
+      <div class="contact-details">
+        <div class="contact-row">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">Address</div>
+            <div class="contact-value">Kasoa, Central Region, Ghana</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-label">Phone</div>
+            <div class="contact-value">+233 XX XXX XXXX</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">info@regfredshotel.com</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <div class="contact-label">Check-in / Check-out</div>
+            <div class="contact-value">2:00 PM / 12:00 PM</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      HOW TO ADD GOOGLE MAPS:
+      1. Go to maps.google.com → search "Kasoa Ghana"
+      2. Click Share → Embed a map → Copy the <iframe> code
+      3. Paste it inside .location-map below, replacing the placeholder div
+    -->
+    <div class="location-map">
+      <div class="map-placeholder">
+        <div class="map-dot"></div>
+        <p>Kasoa, Central Region</p>
+        <p class="map-hint">Paste Google Maps embed here</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">Regfred<span>'s</span> Hotel</div>
+      <p class="footer-tagline">A refined sanctuary in Kasoa, Central Region — where Ghanaian warmth meets world-class comfort.</p>
+      <div class="footer-social">
+        <a href="#" class="social-btn" aria-label="Facebook">f</a>
+        <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+        <a href="#" class="social-btn" aria-label="Instagram">ig</a>
+        <a href="#" class="social-btn" aria-label="Twitter">tw</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Hotel</div>
+      <ul class="footer-links">
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#rooms">Rooms & Suites</a></li>
+        <li><a href="#amenities">Facilities</a></li>
+        <li><a href="#dining">Restaurant</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="#">Conference & Events</a></li>
+        <li><a href="#">Airport Transfer</a></li>
+        <li><a href="#">Spa & Wellness</a></li>
+        <li><a href="#">Room Service</a></li>
+        <li><a href="#">Laundry</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="#">Kasoa, Central Region</a></li>
+        <li><a href="#">+233 XX XXX XXXX</a></li>
+        <li><a href="#">info@regfredshotel.com</a></li>
+        <li><a href="#" onclick="openBooking(); return false;">Book a Room</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Regfred's Hotel, Kasoa. All rights reserved.</span>
+    <span>Privacy Policy · Terms of Service</span>
+  </div>
+</footer>
+
+
+<!-- ===================== BOOKING MODAL ===================== -->
+<div class="modal-overlay" id="bookingModal" onclick="closeOnOverlay(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Reserve Your Room</div>
+      <div class="modal-subtitle">Regfred's Hotel · Kasoa, Ghana</div>
+      <button class="modal-close" onclick="closeBooking()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">First Name</label>
+          <input type="text" class="form-control" placeholder="Kwame">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Last Name</label>
+          <input type="text" class="form-control" placeholder="Mensah">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-control" placeholder="kwame@email.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input type="tel" class="form-control" placeholder="+233 XXXXXXXXX">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Check-In Date</label>
+          <input type="date" class="form-control" id="modal-checkin" onchange="calcTotal()">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Check-Out Date</label>
+          <input type="date" class="form-control" id="modal-checkout" onchange="calcTotal()">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Room Type</label>
+          <select class="form-control" id="room-select" onchange="calcTotal()">
+            <option value="450">Standard Room — GH₵ 450/night</option>
+            <option value="650">Deluxe Room — GH₵ 650/night</option>
+            <option value="1200">Executive Suite — GH₵ 1,200/night</option>
+            <option value="2000">Presidential Suite — GH₵ 2,000/night</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Number of Guests</label>
+          <select class="form-control">
+            <option>1 Guest</option>
+            <option>2 Guests</option>
+            <option>3 Guests</option>
+            <option>4 Guests</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Live price breakdown -->
+      <div class="price-summary" id="price-summary" style="display:none;">
+        <div class="price-row">
+          <span id="price-label">Room rate</span>
+          <span id="price-nights">–</span>
+        </div>
+        <div class="price-row">
+          <span>Taxes & Fees (15%)</span>
+          <span id="price-tax">–</span>
+        </div>
+        <div class="price-total">
+          <span class="price-total-label">Total</span>
+          <span class="price-total-amount" id="price-total">–</span>
+        </div>
+      </div>
+
+      <!-- Payment methods -->
+      <div class="payment-methods">
+        <div class="payment-label">Select Payment Method</div>
+        <div class="payment-options">
+          <label class="payment-opt selected" onclick="selectPayment('momo', this)">
+            <input type="radio" name="payment" value="momo" checked>
+            <span class="payment-opt-icon">📱</span>
+            <div>
+              <div class="payment-opt-name">Mobile Money</div>
+              <div class="payment-opt-detail">MTN MoMo · Vodafone Cash · AirtelTigo</div>
+            </div>
+          </label>
+          <label class="payment-opt" onclick="selectPayment('card', this)">
+            <input type="radio" name="payment" value="card">
+            <span class="payment-opt-icon">💳</span>
+            <div>
+              <div class="payment-opt-name">Card Payment</div>
+              <div class="payment-opt-detail">Visa · Mastercard · Paystack</div>
+            </div>
+          </label>
+        </div>
+        <div class="momo-field visible" id="momo-field">
+          <label class="form-label">MoMo Number</label>
+          <input type="tel" class="form-control" id="momo-number" placeholder="e.g. 0244 000 000" maxlength="15">
+        </div>
+      </div>
+
+      <button class="form-submit" onclick="submitBooking()">Confirm & Pay with Paystack</button>
+      <p class="secure-note">🔒 Secured by Paystack · Your payment info is encrypted</p>
+    </div>
+  </div>
+</div>
+
+<!-- Paystack script — uncomment when you have your key -->
+<!-- <script src="https://js.paystack.co/v1/inline.js"></script> -->
+
+<!-- Main JavaScript -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
